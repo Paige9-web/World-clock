@@ -2,3 +2,10 @@ body {
   background: cornsilk;
   color: blue;
 }
+h1 {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
