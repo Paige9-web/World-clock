@@ -1,3 +1,6 @@
+const citiesElement = document.querySelector("#cities");
+const originalCitiesHTML = citiesElement.innerHTML;
+
 let timer = null;
 function updateTime() {
   let tokyoTime = moment().tz("Asia/Tokyo");
@@ -21,7 +24,9 @@ function updateCity(event) {
   clearInterval(timer);
 
   let cityTimeZone = event.target.value;
-  if (!cityTimeZone) {
+  if (cityTimeZone === "") {
+    citiesElement.innerHTML = originalCitiesHTML;
+
     timer = setInterval(updateTime, 1000);
     updateTime();
     return;
